@@ -2,7 +2,7 @@ FROM alpine:3.19
 
 RUN apk --no-cache add \
     gettext \
-    nginx \
+    busybox-extras \
     openvpn \ 
     privoxy \
     runit
@@ -16,6 +16,7 @@ ENV LOCAL_NETWORK= \
     OPENVPN_PASSWORD= \
     OPENVPN_PROXY_PORT=8080 \
     OPENVPN_TUNNEL_HOSTS= \
-    OPENVPN_USERNAME=
+    OPENVPN_USERNAME= \
+    OPENVPN_EXTRA_ARGS=
 
 CMD ["runsvdir", "/app"]

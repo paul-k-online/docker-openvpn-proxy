@@ -76,7 +76,7 @@ The way this works is with a [Proxy auto-configuration script](https://developer
 
 When your browser or other application wants to make a request to a given host, it will first check this script to decide whether to send the request through the proxy. Most apps/operating systems support this, see [Configure your apps](#configure-your-apps).
 
-If you would like a completely custom configuration with more esoteric switching rules you can create your own auto-configuration script and mount this to `/app/nginx/proxy.pac`. Environment variables will be interpolated at runtime (e.g. anything like `${OPENVPN_HOST}`).
+If you would like a completely custom configuration with more esoteric switching rules you can create your own auto-configuration script and mount this to `/app/httpd/proxy.pac`. Environment variables will be interpolated at runtime (e.g. anything like `${OPENVPN_HOST}`).
 
 ## Acknowledgements
 

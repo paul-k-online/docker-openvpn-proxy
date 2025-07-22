@@ -1,0 +1,13 @@
+#!/bin/sh
+
+export TEMP_DIR="/tmp/httpd"
+mkdir -p "${TEMP_DIR}"
+
+# Generate proxy.pac with environment variables substituted
+envsubst </app/httpd/proxy.pac >"${TEMP_DIR}/proxy.pac"
+
+# Copy index.html
+cp /app/httpd/index.html "${TEMP_DIR}/index.html"
+
+# Start busybox httpd on port 80, serving from TEMP_DIR
+exec httpd -f -v -p 80 -h "${TEMP_DIR}"
