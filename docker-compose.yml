@@ -21,6 +21,8 @@ services:
             - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
             # Adjust for your needs
             - OPENVPN_TUNNEL_HOSTS=*.corp.com
+            # Optional: additional OpenVPN arguments
+            # - OPENVPN_EXTRA_ARGS=--verb 3 --log /tmp/openvpn.log
         ports:
             - 8081:80
             - 8080:8080
