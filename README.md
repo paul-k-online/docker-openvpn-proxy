@@ -34,7 +34,7 @@ Pass values for `docker-compose` in `environment` or to `docker run` with `-e "<
 
 | Variable | Required? | Default | Example | Description |
 |---|---|---|---|---|
-| `LOCAL_NETWORK` | Yes | _none_ | `10.0.8.0/24` | Your local network's address. Required so return packets can reach you. |
+| `LOCAL_NETWORK` | Yes | _none_ | `10.0.8.0/24` or `10.0.8.0/24,192.168.1.0/24` | Your local network's address(es). Required so return packets can reach you. Multiple networks can be separated by comma, space, or semicolon. |
 | `OPENVPN_USERNAME` | No | _none_ | `bob@example.com` | VPN username |
 | `OPENVPN_PASSWORD` | No | _none_ | `top-secret-123` | VPN password |
 | `OPENVPN_AUTO_CONFIG` | No | `true` | `false` | By default, modify the OpenVPN config dynamically so that a reference to the username/password can be inserted. Disable if it causes trouble or you want control. |
