@@ -4,7 +4,7 @@ version: "3"
 
 services:
     ovpn_proxy:
-        image: jonoh/openvpn-proxy
+        image: ghcr.io/paul-k-online/docker-openvpn-proxy:latest
         cap_add:
             - NET_ADMIN
         devices:
@@ -14,9 +14,8 @@ services:
             - 1.0.0.1
         volumes:
             - ./config.ovpn:/config/config.ovpn
-        environment: # This needs to change - your local network(s)
+        environment: # This needs to change - your local network
             - LOCAL_NETWORK=10.0.8.1/24
-            # For multiple networks: LOCAL_NETWORK=10.0.8.0/24,192.168.1.0/24
             # Create a .env file with these values
             - OPENVPN_USERNAME=${OPENVPN_USERNAME}
             - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
